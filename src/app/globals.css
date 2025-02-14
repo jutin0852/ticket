@@ -15,7 +15,26 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* color: var(--foreground); */
+
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+@layer components {
+  .appBg {
+    background: radial-gradient(
+        52.52% 32.71% at 50% 97.66%,
+        rgba(36, 160, 181, 0.2) 0%,
+        rgba(36, 160, 181, 0) 100%
+      ),
+      #02191d;
+  }
+  .techBg {
+    background: radial-gradient(
+        57.42% 106.59% at 14.02% 32.06%,
+        rgba(36, 160, 181, 0.2) 0%,
+        rgba(36, 160, 181, 0) 100%
+      ),
+      rgba(10, 12, 17, 0.1);
+  }
 }
