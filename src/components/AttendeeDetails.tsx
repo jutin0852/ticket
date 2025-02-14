@@ -26,16 +26,6 @@ const schema = z.object({
     ),
   email: z.string().email(),
   request: z.string(),
-  img: z
-    .custom<FileList>((files) => files instanceof FileList, {
-      message: "Invalid file input",
-    })
-    .refine((files) => files.length > 0, {
-      message: "File is required",
-    })
-    .refine((files) => files[0]?.size < 2 * 1024 * 1024, {
-      message: "File must be under 2MB",
-    }),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -107,7 +97,6 @@ export default function AttendeeDetails({
                 drag and drop or click to upload
               </label>
               <input
-                {...register("img")}
                 type="file"
                 onChange={handleFileUpload}
                 id="file"
@@ -116,7 +105,7 @@ export default function AttendeeDetails({
             </div>
           </div>
         </div>
-        {errors.img && <p className="text-red-500">{errors.img.message}</p>}
+        {/* {errors.img && <p className="text-red-500">{errors.img.message}</p>} */}
 
         <div className="flex-col flex gap-2">
           <label htmlFor="fullName">Enter your name</label>
