@@ -49,11 +49,6 @@ export default function AttendeeDetails({
     formState: { errors },
   } = useForm<FormFields>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      fullName: "jutin gg",
-      email: "g@gmail.com",
-      request: "",
-    },
   });
 
   const [previewImg, setPreviewImg] = useState<string>("");
@@ -113,7 +108,7 @@ export default function AttendeeDetails({
                 type="file"
                 onChange={handleFileUpload}
                 id="file"
-                className="hidden"
+                className=""
               />
             </div>
           </div>
