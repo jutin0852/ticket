@@ -27,12 +27,15 @@ const schema = z.object({
   email: z.string().email(),
   request: z.string(),
   img: z
-    .instanceof(FileList)
-    .refine((files) => files.length > 0, "File is required")
-    .refine(
-      (files) => files[0]?.size < 2 * 1024 * 1024,
-      "File must be under 2MB"
-    ),
+    .custom<FileList>((files) => files instanceof FileList, {
+      message: "Invalid file input",
+    })
+    .refine((files) => files.length > 0, {
+      message: "File is required",
+    })
+    .refine((files) => files[0]?.size < 2 * 1024 * 1024, {
+      message: "File must be under 2MB",
+    }),
 });
 
 type FormFields = z.infer<typeof schema>;
