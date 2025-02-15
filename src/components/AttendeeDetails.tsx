@@ -32,7 +32,7 @@ const schema = z.object({
     })
     .refine((files) => files.length > 0, {
       message: "Image file is required",
-    })git
+    })
     .refine(
       (files) =>
         ["image/png", "image/jpeg", "image/webp"].includes(files[0]?.type),
