@@ -14,9 +14,15 @@ type TicketReadyProps = {
 export default function TicketReady({ setIndex, ticket }: TicketReadyProps) {
   return (
     <div className="sm:w-[70%]  w-[90%] max-w-[700px] m-auto bg-[#08252B] text-white p-6 flex flex-col gap-8  rounded-[32px] border-solid border  border-[#197686] md:gap-14">
-      <div className="flex flex-col md:flex-row md:justify-between">
-        <p>Ready</p>
-        <p>Step 3/3</p>
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <p>Ticket Selection</p>
+          <p>Step 3/3</p>
+        </div>
+
+        <div className="bg-[#0E464F] w-full h-1 rounded-sm">
+          <div className="bg-[#24A0B5] w-full h-1 rounded-sm "></div>
+        </div>
       </div>
 
       <div className="text-center">
