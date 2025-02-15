@@ -10,7 +10,7 @@ export default function Header() {
           <Ticket01Icon className="text-white" />
         </div>
         <Image
-          className="inline-block"
+          className="inline-block h-auto w-auto"
           src={"/logo.svg"}
           width={43}
           height={22}
